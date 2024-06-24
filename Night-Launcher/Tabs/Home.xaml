@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="Night_Launcher.Tabs.Home"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:Night_Launcher.Tabs"
+             mc:Ignorable="d"
+             xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Image Source="/Images/Season9.png" Margin="0,10,0,243" x:Name="BackgroundImage"/>
+        <Label Content="00:00:00" Margin="0,30,0,0" HorizontalAlignment="Center" Width="470" FontSize="100" VerticalAlignment="Top" FontFamily="Arial Black" FontWeight="Bold" FontStyle="Normal" Height="105" x:Name="TimerLabel" Foreground="White"/>
+        <Button Content="Add Builds" HorizontalAlignment="Center" VerticalAlignment="Top" Click="AddBuild1_Click" Margin="0,168,0,0" x:Name="AddBuildButton"/>
+        <ui:Card HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="400" Height="200" Visibility="Hidden" x:Name="BuildFrame" RenderTransformOrigin="0.5,0.65">
+            <Grid>
+                <Label Content="Add Builds" Margin="0,-76,0,76" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="White" FontSize="28" FontStyle="Normal" FontFamily="Arial Black"/>
+                <ui:Button Content="Add Build" VerticalAlignment="Bottom" Margin="76,0,0,-72" Click="AddBuild_Click"/>
+                <ui:TextBox Margin="0,-23,0,23" x:Name="VersionName" PlaceholderText="Version Name"/>
+                <ui:TextBox Margin="0,28,65,-27" PlaceholderText="Fortnite Path" x:Name="FortnitePath"/>
+                <ui:Button Content="..." VerticalAlignment="Bottom" Margin="315,0,0,-27" Height="34" Width="55" Click="AddPath_Click"/>
+                <ui:Button Content="Exit" VerticalAlignment="Bottom" Margin="195,0,0,-72" Click="ExitBuild_Click" RenderTransformOrigin="0.463,-0.015" Width="85"/>
+            </Grid>
+        </ui:Card>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="0,255,0,0" x:Name="ScrollerViewer">
+            <StackPanel x:Name="BuildPanel" Visibility="Visible">
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>
